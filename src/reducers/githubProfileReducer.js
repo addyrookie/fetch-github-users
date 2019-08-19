@@ -1,7 +1,8 @@
 import {
 	FETCH_GITHUB_PROFILE,
 	FETCH_GITHUB_PROFILE_SUCCESS,
-	FETCH_GITHUB_PROFILE_FAILURE
+	FETCH_GITHUB_PROFILE_FAILURE,
+	POST_REPOSITORY_INFORMATION
 } from '../constants/actionTypes';
 
 export const initialState = {};
@@ -21,6 +22,10 @@ export const githubProfileReducer = (state = initialState, action) => {
 			return Object.assign({}, state, {
 				isRequesting: false,
 				error: action.payload
+			})
+		case POST_REPOSITORY_INFORMATION: 
+			return Object.assign({}, state, {
+				repositoryInfo: action.payload.repositoryInfo
 			})
 		default:
 			return state;

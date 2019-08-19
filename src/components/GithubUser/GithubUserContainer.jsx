@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import GithubUser from './GithubUser';
-import { fetchGithubProfile } from  '../../actions/githubProfileActions';
+import { fetchGithubProfile, postRepositoryInformation } from  '../../actions/githubProfileActions';
 
 const mapStateToProps = (state) => {
 	const { githubProfile } = state;
@@ -12,7 +12,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => (
 	{
 		fetchGithubProfile: () =>
-			dispatch(fetchGithubProfile())
+			dispatch(fetchGithubProfile()),
+		postRepositoryInformation: repositoryInfo =>
+			dispatch(postRepositoryInformation(repositoryInfo))
 	}
 );
 

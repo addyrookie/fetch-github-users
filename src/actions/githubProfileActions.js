@@ -1,7 +1,8 @@
 import {
 	FETCH_GITHUB_PROFILE,
 	FETCH_GITHUB_PROFILE_SUCCESS,
-	FETCH_GITHUB_PROFILE_FAILURE
+	FETCH_GITHUB_PROFILE_FAILURE,
+	POST_REPOSITORY_INFORMATION
 } from '../constants/actionTypes';
 
 function requestGithubProfile() {
@@ -45,6 +46,16 @@ function fetchGithubProfile() {
 		});
 }
 
+function postRepositoryInformation(repositoryInfo) {
+	return {
+		type: POST_REPOSITORY_INFORMATION,
+		payload: {
+			repositoryInfo
+		}
+	}
+}
+
 export {
-	fetchGithubProfile
+	fetchGithubProfile,
+	postRepositoryInformation
 };
