@@ -18,7 +18,6 @@ class GithubUser extends React.Component {
 		const { postRepositoryInformation } = this.props;
 		const repoInfo = JSON.parse(decodeURIComponent(e.target.dataset.repo));
 		postRepositoryInformation(repoInfo);
-		console.log('Here we go');
 	}
 
 	render() {
@@ -42,7 +41,7 @@ class GithubUser extends React.Component {
 			))
 		}
 		return (
-			<div className="container">
+			<div className="repo-container">
 				{displayRepos}
 			</div>)
 	}
